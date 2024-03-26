@@ -1,0 +1,26 @@
+.nav{
+  height: 44px;
+  color: #fff;
+  display: flex;
+}
+.nav .left,.nav .right{
+  width: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .center{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+image{
+  vertical-align: top;
+}
+.default{
+  display: none;
+}
+.slot:empty + .default{
+  display: flex;
+}

@@ -1,0 +1,25 @@
+function format_count(count){
+  var play_count=parseInt(count)
+  if(play_count>=100000000){
+    return (play_count/100000000).toFixed(1)+'亿'
+
+  }else if(play_count>=10000){
+    return (play_count/10000).toFixed(1)+'万'
+  }else{
+    return play_count
+  }
+}
+function pad_left(time){
+  var time=time+''
+  return ("00"+time).slice(time.length)
+}
+function format_time(time){
+  time=time/1000
+  var min=Math.floor(time/60)
+  var sec=Math.floor(time%60)
+  return pad_left(min)+":"+pad_left(sec)
+}
+module.exports={
+  format_count:format_count,
+  format_time:format_time
+}

@@ -1,0 +1,52 @@
+<!-- 1 搜索框 -->
+<van-search value="{{ searchValue }}" placeholder="请输入搜索关键词"   background="#fafafa" shape="round" bind:click-input="onSearch"/>
+<!-- 2 轮播图 -->
+<swiper class="banner" autoplay 	indicator-dots circular style="height:{{bannerHeight}}px">
+  <block wx:for="{{bannerList}}" wx:key="targetId">
+    <swiper-item class="item">
+      <image class="image" src="{{item.pic}}" mode="widthFix"  bindload="onBannerImageLoad"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 3 推荐歌曲 -->
+<view class="recommend">
+<area-header title="推荐歌曲" bind:moreclick="onRecommendMoreClick" />
+ <view class="list">
+      <block wx:for="{{recommendSongs}}" wx:key="id">
+        <song-item-v1 itemData="{{item}}" 
+          data-index="{{index}}"
+          bindtap="onSongItemTap"
+          />
+      </block>
+    </view>
+</view>
+<!-- 4 热门歌单 -->
+<menu-area title="热门歌单" menuList="{{hotMenuList}}"></menu-area>
+<!-- 5  推荐歌单 -->
+<menu-area title="推荐歌单" menuList="{{rectMenuList}}"></menu-area>
+<!-- 6 各种排行榜 -->
+<view class="ranking" >
+  <area-header title="巅峰榜" hasMore="{{false}}"></area-header>
+  <view class="ranking-list">
+    <block wx:for="{{rankingInfos}}" wx:key="id">
+        <ranking-item itemData="{{item}}" key="{{index}}" />
+    </block>
+  </view>
+</view>
+<!-- 7 播放器 -->
+<view class="play-bar-placeholder" wx:if="{{currentSong.name}}"></view>
+<view class="play-bar" wx:if="{{currentSong.name || isPlaying }}">
+  <view class="left">
+    <image src="{{currentSong.al.picUrl}}" mode="" class="album album-anim"
+      bindtap="onPlayBarAlbum"
+      style="animation-play-state: {{isPlaying?'running':'paused'}};"
+    />
+    <view class="name">{{currentSong.name}}</view>
+  </view>
+  <view class="right">
+  <image src="/assets/images/music/{{isPlaying?'pause':'play'}}_icon.png" 
+    bindtap="onPlayOrPause"
+    mode="" class="play"/>
+  <image src="/assets/images/music/playlist_icon.png" mode="" class="icon"/>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="song-item" bindtap="onSongItemTap">
+  <image src="{{itemData.al.picUrl}}" mode="" class="image"/>
+  <view class="content">
+    <view class="name">{{itemData.name}}</view>
+    <view class="source">{{itemData.ar[0].name}}</view>
+  </view>
+  <view class="arrow">
+    <van-icon name="arrow" />
+  </view>
+</view>

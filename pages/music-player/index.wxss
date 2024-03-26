@@ -1,0 +1,105 @@
+.bg-image,.bg-cover{
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.bg-cover{
+  background-color: rgba(0, 0, 0,.3);
+  backdrop-filter: blur(20px);
+}
+.tabs{
+  display: flex;
+  color:#999;
+  font-size: 28rpx;
+}
+.tabs .divid{
+  margin:0 5px;
+}
+.tabs .active{
+  color:#fff;
+}
+.music{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40rpx 60rpx;
+  font-size: 28rpx;
+  color:#fff;
+  
+
+}
+.music .album{
+ 
+  overflow: hidden;
+  flex:1;
+}
+.music .album image{
+  border-radius: 14rpx;
+  width: 100%;
+}
+.music .info .name{
+  font-size: 48rpx;
+}
+.music .info .singer{
+  margin-top: 10rpx;
+}
+.music .lyric{
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin:12rpx 0;
+}
+.music .process{
+  margin: 12rpx 0;
+}
+.music .process .time{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.music .process .slider{
+  margin:16rpx 8rpx 8rpx 18rpx;
+}
+.music .controls .btn{
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: top; 
+}
+.music .controls .btn.mode{
+width: 80rpx;
+height: 80rpx;
+}
+.music .controls .btn.play{
+width: 100rpx;
+height: 100rpx;
+}
+.music .controls{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 12rpx 0;
+}
+/* 歌词样式 */
+.lyric-list{
+  color:#aaa;
+  text-align: center;
+  font-size: 28rpx;
+  height: 100%;
+  
+}
+.lyric-list ::-webkit-scrollbar{
+  display: none;
+}
+
+.lyric-list .item{
+  height: 36px;
+  line-height: 36px;
+}
+.lyric-list .item.active{
+  color:#0f0;
+  font-size: 32rpx;
+}

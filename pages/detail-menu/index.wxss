@@ -1,0 +1,47 @@
+
+.all-menu{
+  padding: 0 14rpx;
+}
+.item{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.item .li{
+  width: 48%;
+  margin-right: 15rpx;
+}
+.li .image{
+  border-radius: 12rpx;
+  width: 100%;
+}
+.li .iten{
+  font-size: 24rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+.top{
+  position: relative;
+}
+.top .image{
+  width: 100%;
+  border-radius: 12rpx;
+
+}
+
+.top .count{
+  position: absolute;
+  right: 0;
+  bottom: 10rpx;
+  color:#fff;
+  font-size: 22rpx;
+  border-radius: 12rpx;
+  padding: 6rpx 10rpx;
+  background-color: rgba(0, 0, 0, .5);
+}
